@@ -227,13 +227,13 @@ footer a:hover {
 .variants p {
 	margin: 0;
 }
-.color-swatches,
+.colour-swatches,
 .size-options {
 	display: flex;
 	justify-content: center;
 	margin-top: 5px;
 }
-.color-swatch {
+.colour-swatch {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
