@@ -1,18 +1,18 @@
 // JavaScript for Liberty Product Listing Page August 2023
-let selectedColor = null; // Initialize the variable to store selected color
+let selectedColour = null; // Initialize the variable to store selected colour
 
-function switchProductImage(imageId, color, colorName, productName) {
+function switchProductImage(imageId, colour, colourName, productName) {
 	const allImages = document.querySelectorAll(`#${imageId} img`);
 	allImages.forEach((image) => {
 		image.classList.remove('active');
 	});
 	const activeImage = document.getElementById(`${imageId}`);
-	activeImage.src = `images/${imageId}-${color}.jpg`;
-	activeImage.alt = `${productName} - ${colorName}`;
+	activeImage.src = `images/${imageId}-${colour}.jpg`;
+	activeImage.alt = `${productName} - ${colourName}`;
 	activeImage.classList.add('active');
 
-	// Update selectedColor variable
-	selectedColor = color;
+	// Update selectedColour variable
+	selectedColour = colour;
 
 	updateProductCount();
 }
@@ -41,14 +41,14 @@ addToBagButtons.forEach((button) => {
 	button.addEventListener('click', () => {
 		const productElement = button.closest('.product');
 		const productName = productElement.querySelector('h3').textContent;
-		const productColor = selectedColor || 'N/A'; // Use selectedColor
+		const productColour = selectedColour || 'N/A'; // Use selectedColour
 		const sizeOptionActive = productElement.querySelector('.size-option.active');
 		const productSize = sizeOptionActive ? sizeOptionActive.getAttribute('data-size') : 'N/A';
 		const productPrice = productElement.querySelector('.product-name-price p').textContent;
 
 		alert(`Added to Bag:
 Product: ${productName}
-Color: ${productColor}
+Colour: ${productColour}
 Size: ${productSize}
 Price: ${productPrice}`);
 	});
